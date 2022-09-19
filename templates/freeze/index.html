@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 
 <!doctype html>
 <!-- Website template by freewebsitetemplates.com -->
@@ -53,38 +54,35 @@
 			</div>
 			<div class="body">
 			
-				<div class="row bg-warning d-flex flex-row mb-3">
-					<div class="col-md-4" my-5>
-						<div class="card" style="width: 9rem;" >
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-							  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						  </div>
-					</div>
-					<div class="col-md-4 d-inline- flex mx-2">
-						<div class="card" style="width: 9rem;">
-							<img src="https://stock.adobe.com/ke/images/pouring-homemade-kefir-buttermilk-or-yogurt-with-probiotics-yogurt-flowing-from-glass-bottle-on-white-wooden-background-probiotic-cold-fermented-dairy-drink-trendy-food-and-drink-copy-space-left/354940031" class="card-img-top" alt="...">
-							<div class="card-body">
-							  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						  </div>
-					</div>
-					<div class="col-md-4 d-inline mx-2">
-						<!-- <div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-							  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						  </div> -->
-					</div>
-
-				</div>
+				
 			
 				<div>
 					<div>
 						<h1>NEW PRODUCTS</h1>
-						<h3>price: {{ price }}</h3>
+						<!-- <h3>price: {{ price }}</h3> -->
+						{% for dest in dests %}
+						<h1>Product 1</h1>
+						<h4>Name: {{ dest.name}}</h4>
+						<h4>price: {{ dest.price}}</h4>
+						<h4>Description: {{ dest.desc}}</h4>
+						{% if dest.offer %}
+							<h5 class="bg-warning">Has special offer</h5>
+						{% endif %}
+
+						<img src="{{baseUrl}}/{{dest.img}}" alt="">
+						{% endfor %}
+
+						
+						<!-- <h1>Product 2</h1>
+						<h4>Name: {{ dest2.name}}</h4>
+						<h4>price: {{ dest2.price}}</h4>
+						<h4>Description: {{ dest2.desc}}</h4>
+
+						<h1>Product 3</h1>
+						<h4>Name: {{ dest3.name}}</h4>
+						<h4>price: {{ dest3.price}}</h4>
+						<h4>Description: {{ dest3.desc}}</h4> -->
+
 						<h2>The Twist of Healthy Yogurt</h2>
 						<p>This website template has been designed by freewebsitetemplates.com for you, for free. You can replace all this text with your own text.</p>
 					</div>
