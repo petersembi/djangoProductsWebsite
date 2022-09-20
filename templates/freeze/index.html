@@ -40,8 +40,12 @@
 						</ul>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="/accounts/">Register</a>
 					</li>
+					<!-- <li>
+						<a href="contact.html">Contact</a>
+					</li> -->
+					
 				</ul>
 			</div>
 		</div>
@@ -61,7 +65,7 @@
 						<h1>NEW PRODUCTS</h1>
 						<!-- <h3>price: {{ price }}</h3> -->
 						{% for dest in dests %}
-						<h1>Product 1</h1>
+						<h1>Product </h1>
 						<h4>Name: {{ dest.name}}</h4>
 						<h4>price: {{ dest.price}}</h4>
 						<h4>Description: {{ dest.desc}}</h4>
@@ -69,7 +73,8 @@
 							<h5 class="bg-warning">Has special offer</h5>
 						{% endif %}
 
-						<img src="{{baseUrl}}/{{dest.img}}" alt="">
+						<!-- <img src="{{baseUrl}}/{{dest.img}}" alt=""> -->
+						<img src="{{dest.img.url}}" alt="">
 						{% endfor %}
 
 						
