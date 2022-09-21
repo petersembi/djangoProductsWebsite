@@ -53,3 +53,7 @@ def register(request):
         return redirect('/accounts/register.html')
     else:
         return render(request, "accounts/register.html")
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/freeze')
